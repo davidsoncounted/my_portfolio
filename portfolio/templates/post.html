@@ -1,0 +1,56 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>My Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/assets/img/favicon.png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="../static/assets/css/style2.css">
+
+</head>
+
+<body>
+
+        
+            
+            <form action="" id="form" method="POST" class="mt-4 form  form-group" enctype="multipart/form-data"> 
+                <div class="h3">
+                    <a href="{{request.META.HTTP_REFERER}}"><i class="bi bi-x-lg" ></i></a>
+                    <h2>Make post</h2>
+                </div>
+                    {% csrf_token %}
+                    {% for field in port_form %}
+                <div class="ref-form form-group form__group">
+
+                    <label for="ref_form">{{field.label}}</label>
+                    {{field}}
+                        
+                  
+                </div>
+                {% endfor %}
+                <center>
+                <button><i class="bi bi-send"></i><input class="btn" type="submit" value="Submit"></button>
+                </center>
+            </form>
+        

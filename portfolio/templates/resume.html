@@ -1,0 +1,68 @@
+{% load static %}
+
+<section id="resume" class="resume">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Resume</h2>
+        <p>Check My Resume</p>
+      </div>
+
+      <div class="row">
+        {% for details in resume_details %}
+        <div class="col-lg-6">
+          <h3 class="resume-title">Sumary</h3>
+          <div class="resume-item pb-0">
+            <h4>Davidson Counted</h4>
+            
+            <p><em>{{details.summary}}</em></p>
+            <p>
+            <!-- <p><em>Web developer proficient in Python, JavaScript, HTML5, and CSS3. Skilled in developing responsive web
+              applications using frameworks such as Bootstrap, FastApi, Django. Passionate about collaborations,
+              continuous learning, problem-solving, and creating user friendly experiences, and eager to contribute to
+              dynamic projects that leverage cutting-edge technologies.</em></p>
+            <p> -->
+            <ul>
+              <li>{{details.state}}</li>
+              <li>{{details.phone}}</li>
+              <li>{{details.email}}</li>
+            </ul>
+            </p>
+          </div>
+
+          <h3 class="resume-title">Education</h3>
+          <div class="resume-item">
+            <h4>Full stack development </h4>
+            <h5>2022 - 2023</h5>
+            <p><em>ICTSLIDES Institute of technology, Onitsha, Nigeria</em></p>
+            <!-- <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p> -->
+          </div>
+     
+       
+        </div>
+        {% endfor %}
+
+        <div class="col-lg-6">
+          <h3 class="resume-title"> Experience</h3>
+          {% for resume in resume %}
+          <div class="resume-item">
+            <h4>{{resume.role}}</h4>
+            <h5>{{resume.date}}</h5>
+            <p><em>{{resume.company_name}}</em></p>
+            <p>
+            <ul>
+              {% for list in resume.response.all %}
+              <li>{{list.responsibility}}</li>
+              {% endfor %}
+            </ul>
+          </p>
+          </div>
+          {% endfor %}
+        </div>
+             
+        {% include 'cv.html' %}
+      </div>
+
+    </div>
+
+  </section>

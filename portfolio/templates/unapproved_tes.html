@@ -1,0 +1,50 @@
+
+    {% load static %}
+
+    <!--  -->
+<body class="body-testimonial">
+  <div class="testimonials container">
+
+    <div class="section-title">
+      <h2>Not Approved Testimonial</h2>
+    </div>
+    
+    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+      
+      <div class="swiper-wrapper">
+        {% for ref in reference %}
+        <div class="swiper-slide">
+          
+          <div class="testimonial-item">
+            
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              {{ref.review}}
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <img src="{{ref.rate_image}}" class="testimonial-img" alt="">
+            <h3>{{ref.name}}</h3>
+            <h4>{{ref.occupation}}</h4>
+            
+            <a href="{% url 'approve' ref.pk %}"><button>Approve</button></a>
+          </div>
+          
+
+        </div>
+        {% endfor %}
+        
+  
+        <!-- End testimonial item -->
+  
+  
+      </div>
+      
+      <div class="swiper-pagination"></div>
+    </div>
+    
+    <div class="owl-carousel testimonials-carousel">
+  
+    </div>
+    
+  </div>
+</body>

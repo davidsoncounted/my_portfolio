@@ -1,0 +1,52 @@
+{% load static %}
+
+<!--  -->
+<body class="body-testimonial">
+  <div class="testimonials container">
+
+    <div class="section-title">
+      <h2>Testimonials</h2>
+    </div>
+    
+    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+      
+      <div class="swiper-wrapper">
+        {% for testimonial in ref %}
+        <div class="swiper-slide">
+          
+          <div class="testimonial-item">
+            
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              {{testimonial.review}}
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <img src="{{testimonial.rate_image}}" class="testimonial-img" alt="">
+            <h3>{{testimonial.name}}</h3>
+            <h4>{{testimonial.occupation}}</h4>
+            
+          </div>
+          
+
+        </div>
+        {% endfor %}
+        
+  
+       <!-- End testimonial item -->
+  
+  
+      </div>
+      
+      <div class="swiper-pagination"></div>
+    </div>
+    
+    <div class="owl-carousel testimonials-carousel">
+  
+    </div>
+    
+    <div class="ratings" id="ratings">
+        
+        <a href="{% url 'form' %}" class="portfolio-details-lightbox"><button class="d-flex rate_btn" onclick="open()" id="open-form">Do you want to rate us?</button></a>
+      
+    </div>
+  </div>

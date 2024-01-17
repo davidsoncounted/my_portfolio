@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>My Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@1.0.8/dist/css/glightbox.min.css">
+  
+  <!-- Add the GLightbox JavaScript file -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@1.0.8/dist/js/glightbox.min.js"></script>
+  <!-- Favicons -->
+  <link href="../static/assets/img/favicon.png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/style.css" rel="stylesheet" id="dark-theme">
+  <link href="../static/assets/css/style1.css" rel="stylesheet" id="light-theme" disabled>
+</head>
+  <body>
+    <div class="hero img-fluid"  id="hero">
+
+        <!-- ======= Header ======= -->
+        <header id="header">
+          <div class="container">
+            <div class="mode_div"><svg xmlns="http://www.w3.org/2000/svg" class="mode" width="30" height="30" fill="currentColor" onclick="mode()" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+              <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+            </svg></div>
+            <h1><a href="{% url 'index' %}">Davidson Counted</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="{% url 'index' %}" class="mr-auto"><img src="{% static 'assets/img/newest-log.png' %}" alt="" class="img-fluid"></a> -->
+            <div class="name">
+              <!-- <h1>Davidson Counted</h1> -->
+              <h2>I'm a passionate <span>Full stack Developer</span> from Nigeria</h2>
+            </div>
+      
+            <nav id="navbar" class="navbar">
+              <ul>
+                <li><a class="nav-link active" href="#header">Home</a></li>
+                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="#resume">Resume</a></li>
+                <li><a class="nav-link" href="#services">Services</a></li>
+                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                <li><a class="nav-link" href="#contact">Contact</a></li>
+              </ul>
+              <i class="bi bi-list mobile-nav-toggle"></i>
+            
+            </nav><!-- .navbar -->
+      
+            <div class="social-links">
+      
+                <div class="button">
+                  <div class="icon">
+                    <a href="https://www.linkedin.com/in/davidsoncounted" class="linkedin" ><i class="bi bi-linkedin"></i> </a>
+                  </div>
+                  <div class="span">
+                  </div>
+                  <!-- <span>Linkedin</span> -->
+                </div>
+                <div class="button">
+                  <div class="icon">
+                    <a href="https://web.facebook.com/profile.php?id=100088658765028" class="facebook" ><i class="bi bi-facebook"></i> </a>
+                  </div>
+                  <!-- <span>Facebook</span> -->
+                </div>
+                <div class="button">
+                  <div class="icon">
+                    <a href="https://www.instagram.com/dcounted/" class="instagram" ><i class="bi bi-instagram"></i> </a>
+                  </div>
+                  <!-- <span>Instagram</span> -->
+                </div>
+                <div class="button">
+                  <div class="icon">
+                    <a href="https://github.com/davidsoncounted" class="github"><i class="bi bi-github"></i> </a>
+                  </div>
+                  <!-- <span>Github</span> -->
+                </div>
+      
+            </div>
+      
+          </div>
+        </header>
+        <!-- End Header -->
+      
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+    
+    <!-- ======= About Me ======= -->
+      {% include 'about.html' %}
+    <!-- End About Me -->
+
+    <!-- ======= Counts ======= -->
+    <center>
+      <div class="counts container" >
+        
+          <div class="row counts-row">
+
+            <div class="col-lg-3 col-md-6">
+              <div class="count-box">
+                <i class="bi bi-emoji-smile"></i>
+                <span data-purecounter-start="0" data-purecounter-end="70" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+              <div class="count-box">
+                <i class="bi bi-journal-richtext"></i>
+                <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Projects</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+              <div class="count-box">
+                <i class="bi bi-clock"></i>
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+
+          </div>
+        
+      </div><!-- End Counts -->
+    </center>
+    <!-- ======= Skills  ======= -->
+    <div class="skills container">
+
+      <div class="section-title">
+        <h2>Skills</h2>
+      </div>
+
+      <div class="row skills-content">
+
+        <div class="skill_list">
+          {% for skills in skills %}
+          <div class="progress">
+            <span class="skill">{{skills.skill}} <i class="val">{{skills.level}}</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="{{skills.aria_level}}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+
+    </div><!-- End Skills -->
+ 
+    <!-- ======= Interests ======= -->
+    <div class="interests container">
+
+      <div class="section-title">
+        <h2>Interests</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-4" style="position: relative; top: 25px;">
+          <div class="icon-box">
+            <i class="bi bi-book" style="color: #ffbb2c;"></i>
+            <h3>Continuos Learning</h3>
+          </div>
+        </div>
+        <!-- <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+            <h3>Dolor Sitema</h3>
+          </div>
+        </div> -->
+        <!-- <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+            <h3>Sed perspiciatis</h3>
+          </div>
+        </div> -->
+        <!-- <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+          <div class="icon-box">
+            <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+            <h3></h3>
+          </div>
+        </div> -->
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="bi bi-globe" style="color: #47aeff;"></i>
+            <h3>Web technologies</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="bi bi-people-fill" style="color: #ffa76e;"></i>
+            <h3>Collaboration</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="bx bx-reset" style="color: #11dbcf;"></i>
+            <h3>Problem solving</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="bi bi-tools" style="color: #4233ff;"></i>
+            <h3>Tools and platforms</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="bi bi-microsoft-teams" style="color: #b2904f;"></i>
+            <h3>Team Work</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-disc-line" style="color: #b20969;"></i>
+            <h3>Music</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-base-station-line" style="color: #ff5828;"></i>
+            <h3>Open Source Projects</h3>
+          </div>
+        </div>
+        <!-- <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
+            <h3>Flavor Nivelanda</h3>
+          </div>
+        </div> -->
+      </div>
+
+    </div><!-- End Interests -->
+
+    <!-- ======= Testimonials ======= -->
+    {% include 'testimonial.html' %}
+
+    {% if user.is_authenticated %}
+    <!-- <a href="{% url 'unapproved' %}"><button>View the unapproved ref</button></a> -->
+    {%  include 'unapproved_tes.html'  %}
+    {% endif %}
+    <!-- <a href="{% url 'ref' %}"><button>View the approved ref</button></a> -->
+   <!-- End Testimonials  -->
+
+
+ 
+    
+    
+  </section>
+        <!-- End About Section -->
+      
+        <!-- ======= Resume Section ======= -->
+        {% include 'resume.html' %}
+      <!-- End Resume Section -->
+      
+        <!-- ======= Services Section ======= -->
+        {% include 'services.html' %}
+        <!-- End Services Section -->
+      
+        <!-- ======= Portfolio Section ======= -->
+        
+        <!-- End Portfolio Section -->
+      
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+          <div class="container">
+      
+            <div class="section-title">
+              <h2>Contact</h2>
+              <p>Contact Me</p>
+            </div>
+      
+            <div class="row mt-2">
+      
+              <div class="col-md-6 d-flex align-items-stretch">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>My Location</h3>
+                  <p>Onitsha, Anambra State</p>
+                </div>
+              </div>
+      
+              <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+                <div class="info-box">
+                  <i class="bx bx-share-alt"></i>
+                  <h3>Social Profiles</h3>
+                  <div class="social-links">
+                    <a href="https://github.com/davidsoncounted" class="github"><i class="bi bi-github"></i></a>
+                    <a href="https://web.facebook.com/profile.php?id=100088658765028" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/dcounted/" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <!-- <a href="#" class="google-plus"><i class="bi bi-skype"></i></a> -->
+                    <a href="https://www.linkedin.com/in/davidsoncounted" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-md-6 mt-4 d-flex align-items-stretch">
+                <div class="info-box">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Me</h3>
+                  <p>davidsoncounted6@gmail.com</p>
+                </div>
+              </div>
+              <div class="col-md-6 mt-4 d-flex align-items-stretch">
+                <div class="info-box">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Me</h3>
+                  <p>+234 8087783254</p>
+                </div>
+              </div>
+            </div>
+      
+            <form action="contact" method="POST" role="form" class="php-email-form mt-4">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="text-center"><input type="submit" value="Send message"></div>
+              
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <!-- <div class="sent-message">{{message}}</div> -->
+              </div>
+              
+          
+              
+          
+            </form>
+      
+          </div>
+        </section>
+      <!-- End Contact Section -->
+      
+      
+        <!-- Vendor JS Files -->
+        <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="../static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+      
+      
+        <!-- Template Main JS File -->
+        <script src="../static/assets/js/main.js"></script>
+        
+      
+        {% for message in messages %}
+          {% if message.tags == 'success' %}
+          <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+          <script>
+            $(document).ready(function(){
+              $("#exampleModal").modal("show");
+          
+            });
+          </script>
+      
+          {% endif %}
+        {% endfor %}
+      
+      
+      
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+          <div class="modal-dialog modal-dialog-centered " >
+            <div class="modal-content" style="background-color: rgba(56, 56, 56, 0.7);">
+              <div class="modal-header">
+                <div class="justify-content-center">
+                  <h6 class="modal-title fs-5" id="exampleModalLabel">Thank you!</h6>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                <div>
+                  <i class="bi bi-check-circle" style="color: #18d26e; padding: 10px;"></i>
+                  <br>
+                  <div class="mb-2"><h4>Message sent succefully</h4></div>
+                  <p> I will contact you shortly</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- error message for contact form  -->
+        {% for message in messages %}
+        {% if message.tags == 'error' %}
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script>
+          $(document).ready(function(){
+            $("#exampleModal2").modal("show");
+        
+          });
+        </script>
+    
+        {% endif %}
+      {% endfor %}
+    
+    
+    
+      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-dialog-centered " >
+          <div class="modal-content" style="background-color: rgba(56, 56, 56, 0.7);">
+            <div class="modal-header">
+              <div class="justify-content-center">
+                <h6 class="modal-title fs-5" id="exampleModalLabel">Oops</h6>
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <div>
+                <i class="bi bi-x-lg" style="color: red; padding: 10px;"></i>
+                <br>
+                <div class="mb-2"><h4>Something went wrong</h4></div>
+                <p> Please try again / check your internet connection</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+        <!-- modal for reference form -->
+
+        {% for message in messages %}
+          {% if message.tags == 'info' %}
+          <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+          <script>
+            $(document).ready(function(){
+              $("#exampleModal1").modal("show");
+          
+            });
+          </script>
+
+      
+          {% endif %}
+        {% endfor %}
+      
+      
+      
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+          <div class="modal-dialog modal-dialog-centered " >
+            <div class="modal-content" style="background-color: rgba(56, 56, 56, 0.7);">
+              <div class="modal-header">
+                <div class="justify-content-center">
+                  <h6 class="modal-title fs-5" id="exampleModalLabel">Thank You!!</h6>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                <div>
+                  <i class="bi bi-check-circle" style="color: #18d26e; padding: 10px;"></i>
+                  <br>
+                  <div class="mb-2"><h4>your reference/review means alot to me</h4></div>
+                  <p> i will approve it shortly</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      
+
+    </div>
+  </body>
