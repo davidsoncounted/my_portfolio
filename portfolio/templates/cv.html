@@ -13,9 +13,11 @@
     </style>
 </head>
 <body>
+    {% for cv in cv %}
     <div class="cv_div">
-        <a href="{% url 'download' %}"  ><button class="cv">View Cv</button></a>
-        <a href="{% url 'download' %}" download="Davidson's Cv"><button class="cv">Download Cv</button></a>
+        <a href="{{ cv.cv_field.url }}" target="_blank">D<button class="cv">View Cv</button></a>
+        <a href="{{cv.cv_field.url}}" download="Davidson's Cv"><button class="cv">Download Cv</button></a>
     </div>
+    {% endfor %}
 </body>
 </html>

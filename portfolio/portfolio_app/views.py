@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import Contact, Portfolio, Resume, Rate, Resume_details, About, Skills, Resume_responsibility, Portfoliocategory
+from .models import Contact, Portfolio, Resume, Rate, Resume_details, Cv, About, Skills, Resume_responsibility, Portfoliocategory
 from django.contrib.auth import authenticate
 from django.http import HttpResponseRedirect, HttpResponse, FileResponse
 from django.contrib.auth.decorators import login_required
@@ -25,7 +25,8 @@ def index(request):
     # web_choice = Portfolio.objects.filter(web_development = True)
     reference = Rate.objects.filter(approve=False)
     approved_ref = Rate.objects.filter(approve=True)
-    context = {'portfolio': portfolio, 'about':about, 'skills':skills, 'reference': reference, 'categories': categories, 'resume_details': resume_details, 'cate': cate,'resume': resume, 'ref': approved_ref}
+    cv = Cv.objects.all()
+    context = {'portfolio': portfolio, 'cv':cv, 'about':about, 'skills':skills, 'reference': reference, 'categories': categories, 'resume_details': resume_details, 'cate': cate,'resume': resume, 'ref': approved_ref}
     return render(request, 'index.html',context)
    
 
@@ -51,7 +52,7 @@ def create_post(request):
             messages.success(request, 'Post successful')
             return redirect('portfolio')
         else:
-            messages.error(request, 'post not successful')
+            messages.warning(request, 'post not successful')
             return redirect('create-post')
     context = {'port_form': port_form}
     return render(request, 'post.html', context)
@@ -95,7 +96,7 @@ def rate(request):
             return redirect('index')
         else:
             form = ref_form()
-            messages.error(request, 'something went wrong')
+            messages.warning(request, 'something went wrong')
             return redirect('form')
     context = {'form': form}
     return render(request, 'ref-form.html', context) 
@@ -118,7 +119,6 @@ def unapproved_ref(request):
     return render(request, 'unapproved_tes.html', context)
 
 def download(request):
-    file = os.path.join(settings.BASE_DIR, "cv_download/Davidson's Cv.pdf")
-    open_file = open(file, 'rb')
-
-    return FileResponse(open_file)
+    cv = Cv.objects.all()
+    cv = cv.download()
+    return render(request, 'cv.html', {'cv':cv})

@@ -28,29 +28,79 @@
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="../static/assets/css/style2.css">
 
+    
+  <style>
+    .form{
+        color: #fff;
+    }
+    
+  </style>
 </head>
 
 <body>
 
         
             
-            <form action="" id="form" method="POST" class="mt-4 form  form-group" enctype="multipart/form-data"> 
-                <div class="h3">
-                    <a href="{{request.META.HTTP_REFERER}}"><i class="bi bi-x-lg" ></i></a>
-                    <h2>Make post</h2>
-                </div>
-                    {% csrf_token %}
-                    {% for field in port_form %}
-                <div class="ref-form form-group form__group">
+    <form action="" id="form" method="POST" class="mt-4 form  form-group" enctype="multipart/form-data"> 
+        <div class="h3">
+            <a href="{{request.META.HTTP_REFERER}}"><i class="bi bi-x-lg" ></i></a>
+            <h2>Make post</h2>
+        </div>
+            {% csrf_token %}
+            {% for field in port_form %}
+        <div class="ref-form form-group form__group">
 
-                    <label for="ref_form">{{field.label}}</label>
-                    {{field}}
-                        
-                  
-                </div>
-                {% endfor %}
-                <center>
-                <button><i class="bi bi-send"></i><input class="btn" type="submit" value="Submit"></button>
-                </center>
-            </form>
+            <label for="ref_form">{{field.label}}</label>
+            {{field}}
+                
+            
+        </div>
+        {% endfor %}
+        <center>
+        <button><i class="bi bi-send"></i><input class="btn" type="submit" value="Submit"></button>
+        </center>
+    </form>
+
+
+    {% for message in messages %}
+    {% if message.tags == 'warning' %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function(){
+        $("#exampleModal").modal("show");
+    
+      });
+    </script>
+
+    {% endif %}
+  {% endfor %}
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered " >
+      <div class="modal-content" style="background-color: rgba(56, 56, 56, 0.7);">
+        <div class="modal-header">
+          <div class="justify-content-center">
+            <h6 class="modal-title fs-5" id="exampleModalLabel">Oops!</h6>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div>
+            <i class="bi bi-x-lg" style="color: red; padding: 10px;"></i>
+            <br>
+            <div class="mb-2"><h4>Something went wrong</h4></div>
+            <p> Please try again / check your internet connection</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+        
         

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Portfolio, Resume,Rate, Portfoliocategory, Resume_details,Resume_responsibility, About, Skills
+from .models import Contact, Portfolio, Resume,Rate, Portfoliocategory, Cv, Resume_details,Resume_responsibility, About, Skills
 # Register your models here.
 
 class contact_admin(admin.ModelAdmin):
@@ -22,4 +22,5 @@ admin.site.register(Portfoliocategory)
 admin.site.register(Rate)  
 admin.site.register(Skills)  
 admin.site.register(About)  
+admin.site.register(Cv)  
  

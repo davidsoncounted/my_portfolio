@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils import timezone
+import os 
+from django.http import FileResponse
+from django.conf import settings
 
 # Create your models here.
 
@@ -54,9 +57,23 @@ class Resume_details(models.Model):
     education_title = models.CharField(max_length=100, null=True)
     education_date = models.CharField(max_length = 20, null=True)
     education_name = models.CharField(max_length = 200, null= True)
+  
+
+ 
 
     def __str__(self):
         return self.email
+    
+class Cv(models.Model):
+    cv_field = models.FileField(null =True, upload_to= 'cv_download')
+
+    
+    def download(request, self):
+        file = os.path.join(settings.BASE_DIR, self.cv_field)
+        open_file = open(file, 'rb')
+        cv = Resume_details.objects.all()
+        return FileResponse(open_file)
+
 
 class Resume_responsibility(models.Model):
     responsibility = models.CharField(null= True, max_length= 200)
